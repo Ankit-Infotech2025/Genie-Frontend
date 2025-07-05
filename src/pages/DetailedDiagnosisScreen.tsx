@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react';
 
 const DetailedDiagnosisScreen: React.FC = () => {
   const [typedDiagnosisTitle, setTypedDiagnosisTitle] = useState("");
-  const [typedMagnesiumDeficiency, setTypedMagnesiumDeficiency] = useState("");
-  const [typedBlackSpot, setTypedBlackSpot] = useState("");
-  const [typedSolutionsText, setTypedSolutionsText] = useState("");
-  const [visibleSolutions, setVisibleSolutions] = useState(0);
+  const [, setTypedMagnesiumDeficiency] = useState("");
+  const [, setTypedBlackSpot] = useState("");
+  const [, setTypedSolutionsText] = useState("");
+  const [, setVisibleSolutions] = useState(0);
 
   useEffect(() => {
     setTypedDiagnosisTitle("");

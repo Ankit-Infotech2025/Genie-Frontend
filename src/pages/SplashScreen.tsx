@@ -6,7 +6,7 @@ interface SplashScreenProps {
     onAnimationComplete: () => void;
 }
 
-const SplashScreen: React.FC<SplashScreenProps> = ({ setShowRobotAnimation, showRobotAnimation, onAnimationComplete }) => {
+const SplashScreen: React.FC<SplashScreenProps> = ({ setShowRobotAnimation, onAnimationComplete }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowRobotAnimation(false);

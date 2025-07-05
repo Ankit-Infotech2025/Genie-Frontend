@@ -1,6 +1,6 @@
 // src/screens/TutorialScreen.tsx
 import React from 'react';
-import { Camera, Info } from 'lucide-react';
+import { Camera } from 'lucide-react';
 import { StepOne } from '../Shared/StepOne';
 import { StepTwo } from '../Shared/StepTwo';
 
@@ -8,11 +8,11 @@ interface TutorialScreenProps {
     onCameraClick: () => void;
 }
 
-const handleCameraClick = (inputRef: React.RefObject<HTMLInputElement>) => {
-    inputRef.current?.click();
-};
+// const handleCameraClick = (inputRef: React.RefObject<HTMLInputElement>) => {
+//     inputRef.current?.click();
+// };
 
-const TutorialScreen: React.FC<TutorialScreenProps> = ({ onCameraClick }) => {
+const TutorialScreen: React.FC<TutorialScreenProps> = ({ }) => {
     return (
         <div className="min-h-screen bg-white">
             <div className="px-6 py-6">

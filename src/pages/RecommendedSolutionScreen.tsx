@@ -1,6 +1,6 @@
 // src/screens/RecommendedSolutionScreen.tsx
 import React from 'react';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface RecommendedSolutionScreenProps {
   onContinueToChatClick: () => void;
