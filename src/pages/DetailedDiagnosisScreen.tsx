@@ -1,4 +1,3 @@
-import { ArrowRight } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 
 const DetailedDiagnosisScreen: React.FC = () => {
@@ -7,10 +6,10 @@ const DetailedDiagnosisScreen: React.FC = () => {
   const [, setTypedBlackSpot] = useState("");
   const [, setTypedSolutionsText] = useState("");
 
-  const [typedConfidence, setTypedConfidence] = useState("");
+  const [, setTypedConfidence] = useState("");
   const [typedIssueTitle, setTypedIssueTitle] = useState("");
   const [typedIssueDescription, setTypedIssueDescription] = useState("");
-  const [typedDiagnosisDetailsText, setTypedDiagnosisDetailsText] = useState("");
+  const [, setTypedDiagnosisDetailsText] = useState("");
 
   const [, setVisibleSolutions] = useState(0);
 
