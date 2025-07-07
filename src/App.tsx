@@ -32,7 +32,7 @@ const AppContent: React.FC = () => {
     AppRoutes.Verification,
     AppRoutes.Tutorial,
     AppRoutes.AIChat,
-    AppRoutes.PlantId,
+    // AppRoutes.PlantId,
     AppRoutes.DetailedDiagnosis,
     AppRoutes.RecommendedSolution,
   ];

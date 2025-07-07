@@ -70,9 +70,9 @@ const PlantCategoriesScreen: React.FC<PlantCategoriesScreenProps> = ({ onLoginCl
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="px-6 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-xl font-bold text-gray-800 mb-2">
+      <div className="px-6 py-4">
+        <div className="text-center mb-4">
+          <h1 className="text-xl font-bold text-gray-800">
             {typedText}
             {typedText.length < "α Version - 10 Plants Model".length && (
               <span className="inline-block w-0.5 h-6 bg-gray-800 ml-1 animate-pulse"></span>
@@ -86,36 +86,43 @@ const PlantCategoriesScreen: React.FC<PlantCategoriesScreenProps> = ({ onLoginCl
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 mb-8">
+        <div className="grid grid-cols-2 gap-1 ">
           {plantCategories.map((plant, index) => (
             <div
               key={index}
-              className={`bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-500 ${
-                index < visiblePlants ? "opacity-100 transform translate-y-0" : "opacity-0 transform -translate-y-4"
-              }`}
+              className={`overflow-hidden  transition-all duration-500
+                ${index < visiblePlants
+                  ? "opacity-100 scale-100 translate-y-0"
+                  : "opacity-0 scale-75 translate-y-4"
+                }`}
+              style={{ transitionDelay: `${index * 80}ms` }}
             >
-              <div className="aspect-square bg-gray-100">
+              <div className="">
                 <img
                   src={plant.image}
                   alt={plant.name}
-                  className="w-full h-full object-cover"
+                  className="w-20 h-20 rounded-lg object-cover mx-auto transition-all duration-500"
                 />
               </div>
-              <div className="p-3 text-center">
-                <p className="text-sm font-medium text-gray-800">{plant.name}</p>
+              <div className="p-2 text-center">
+                <p className="text-xs font-medium text-gray-800">{plant.name}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <button
-          onClick={onLoginClick}
-          className={`w-full bg-[#179C26] text-white py-3 rounded-full text-base font-semibold hover:bg-green-600 transition-all duration-500 ${
-            visiblePlants >= plantCategories.length ? "opacity-100 transform translate-y-0" : "opacity-0 transform -translate-y-4"
-          }`}
-        >
-          Login
-        </button>
+        <div className="flex justify-center">
+          <button
+            onClick={onLoginClick}
+            className={`fixed left-1/2 bottom-6 transform -translate-x-1/2 flex justify-center items-center w-64 bg-[#179C26] text-white py-3 rounded-full text-base font-semibold hover:bg-green-600 transition-all duration-500 ${visiblePlants >= plantCategories.length
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+              }`}
+          >
+            Login
+          </button>
+        </div>
+
       </div>
     </div>
   );
