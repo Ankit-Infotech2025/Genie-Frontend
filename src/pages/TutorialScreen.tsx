@@ -12,7 +12,7 @@ interface TutorialScreenProps {
 //     inputRef.current?.click();
 // };
 
-const TutorialScreen: React.FC<TutorialScreenProps> = ({ }) => {
+const TutorialScreen: React.FC<TutorialScreenProps> = ({ onCameraClick }) => {
     return (
         <div className="min-h-screen bg-white">
             <div className="px-6 py-6">
@@ -66,8 +66,8 @@ const TutorialScreen: React.FC<TutorialScreenProps> = ({ }) => {
 
             <div className="">
                 <button
-                    // onClick={onCameraClick}
-                    className="w-full bg-[#179C26] text-white py-3 rounded-full text-base font-semibold hover:bg-green-600 transition-all duration-500"
+                    onClick={onCameraClick}
+                    className="w-full bg-[#108244] text-white py-3 rounded-full text-base font-semibold hover:bg-green-600 transition-all duration-500"
                     aria-label="Open camera"
                 >
                     {/* <Camera className="w-12 h-12 text-black" /> */}

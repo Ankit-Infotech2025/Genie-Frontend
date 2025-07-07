@@ -114,7 +114,7 @@ const PlantCategoriesScreen: React.FC<PlantCategoriesScreenProps> = ({ onLoginCl
         <div className="flex justify-center">
           <button
             onClick={onLoginClick}
-            className={`fixed left-1/2 bottom-6 transform -translate-x-1/2 flex justify-center items-center w-64 bg-[#179C26] text-white py-3 rounded-full text-base font-semibold hover:bg-green-600 transition-all duration-500 ${visiblePlants >= plantCategories.length
+            className={`fixed left-1/2 bottom-6 transform -translate-x-1/2 flex justify-center items-center w-64 bg-[#108244] text-white py-3 rounded-full text-base font-semibold hover:bg-green-600 transition-all duration-500 ${visiblePlants >= plantCategories.length
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-4"
               }`}

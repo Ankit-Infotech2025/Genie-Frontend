@@ -45,7 +45,7 @@ const AppContent: React.FC = () => {
   const handleLoginClick = () => navigate(AppRoutes.PhoneLogin);
   const handleGetOtpClick = () => navigate(AppRoutes.Verification);
   const handleConfirmOtpClick = () => navigate(AppRoutes.Tutorial);
-  const handleCameraClick = () => navigate(AppRoutes.PlantId);
+  const handleCameraClick = () => navigate(AppRoutes.AIChat);
   const handleDiagnosisDetailsClick = () => navigate(AppRoutes.DetailedDiagnosis);
   const handleContinueToChatClick = () => navigate(AppRoutes.AIChat);
   const handleGetRecommendationClick = () => navigate(AppRoutes.DetailedDiagnosis); // From AI Chat to Detailed Diagnosis

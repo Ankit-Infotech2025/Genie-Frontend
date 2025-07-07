@@ -1,4 +1,6 @@
+import { ArrowRight } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const DetailedDiagnosisScreen: React.FC = () => {
   const [typedDiagnosisTitle, setTypedDiagnosisTitle] = useState("");
@@ -10,7 +12,6 @@ const DetailedDiagnosisScreen: React.FC = () => {
   const [typedIssueTitle, setTypedIssueTitle] = useState("");
   const [typedIssueDescription, setTypedIssueDescription] = useState("");
   const [, setTypedDiagnosisDetailsText] = useState("");
-
   const [, setVisibleSolutions] = useState(0);
 
   useEffect(() => {
@@ -110,7 +111,7 @@ const DetailedDiagnosisScreen: React.FC = () => {
             if (titleIndex < issueTitleText.length) {
               setTypedIssueTitle(issueTitleText.substring(0, titleIndex + 1));
               titleIndex++;
-              setTimeout(typeIssueTitle, 60);
+              setTimeout(typeIssueTitle, 30);
             } else {
               setTimeout(() => {
                 let descIndex = 0;
@@ -122,14 +123,14 @@ const DetailedDiagnosisScreen: React.FC = () => {
                   }
                 };
                 typeIssueDescription();
-              }, 300);
+              }, 400);
             }
           };
           typeIssueTitle();
-        }, 500);
+        }, 400);
       }
     };
-    setTimeout(typeConfidence, 800);
+    setTimeout(typeConfidence, 2000);
 
     setTimeout(() => {
       let detailsIndex = 0;
@@ -141,7 +142,7 @@ const DetailedDiagnosisScreen: React.FC = () => {
         }
       };
       typeDiagnosisDetails();
-    }, 3000); // Start typing diagnosis details after other animations
+    }, 4000); // Start typing diagnosis details after other animations
   }, []);
 
 
@@ -151,15 +152,15 @@ const DetailedDiagnosisScreen: React.FC = () => {
         <div className="text-center mb-8">
           <div className='relative mb-4'>
             <img src="/disease.png"
-              alt=""
+              alt="disease"
               className='rounded-lg'
             />
             {/* <div className='absolute bottom-4 right-4'> */}
-              <p className='absolute top-10 left-4 w-32 border-4 border-green-600 text-black bg-white/80 px-2 py-1 rounded-lg text-lg font-semibold mb-2'>
-                Magnesium Deficiency
+              <p className='absolute top-10 left-5 w-32 animate-border inline-block rounded-md bg-white/80 bg-gradient-to-r from-green-600 via-green-400 to-green-700 bg-[length:400%_400%] p-1'>
+                <span className="block rounded-md bg-white/80 p-2 font-bold text-black">Magnesium Deficiency</span>
               </p>
-              <p className='absolute bottom-44 right-4 w-auto border-4 border-green-600 text-black bg-white/80 px-2 py-1 rounded-lg text-lg font-semibold'>
-                Black Spot
+              <p className='absolute bottom-44 right-4 w-32 animate-border inline-block rounded-md bg-white/80 bg-gradient-to-r from-green-600 via-green-400 to-green-700 bg-[length:400%_400%] p-1'>
+                <span className="block rounded-md bg-white/80 p-2 font-bold text-black">Black Spot</span>
               </p>
             {/* </div> */}
           </div>
@@ -172,7 +173,7 @@ const DetailedDiagnosisScreen: React.FC = () => {
           </p>
 
           <div className="rounded-lg my-8">
-            <div className="flex items-center justify-center gap-1">
+            <div className="bg-gray-100 p-3 rounded-lg flex items-center justify-center gap-1">
               <div className="flex-1 text-start">
                 <h3 className="text-green-600 font-semibold">Common Issues</h3>
                 <h4 className="font-bold text-gray-800">
@@ -192,7 +193,7 @@ const DetailedDiagnosisScreen: React.FC = () => {
                 <img
                   src="/yellowing-leaves.png"
                   alt="Yellowing leaves"
-                  className="w-full h-full rounded-lg"
+                  className="w-auto h-auto rounded-lg"
                 />
               </div>
             </div>
@@ -210,6 +211,13 @@ const DetailedDiagnosisScreen: React.FC = () => {
               </p>
             </div>
           </div>
+
+          <Link
+          to={"/solution"}
+          className='bg-[#108244] text-white w-full px-4 py-2 rounded-full font-semibold hover:bg-green-600 transition-colors inline-flex justify-center items-center gap-1 mt-4'
+          >
+            <ArrowRight />
+          </Link>
         </div>
       </div>
     </div>

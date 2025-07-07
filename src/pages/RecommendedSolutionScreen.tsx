@@ -7,7 +7,7 @@ interface RecommendedSolutionScreenProps {
   onContinueToChatClick: () => void;
 }
 
-const RecommendedSolutionScreen: React.FC<RecommendedSolutionScreenProps> = ({ onContinueToChatClick }) => {
+const RecommendedSolutionScreen: React.FC<RecommendedSolutionScreenProps> = ({ }) => {
   return (
     <div className="min-h-screen bg-white">
       <div className="px-6 py-8">
@@ -50,7 +50,7 @@ const RecommendedSolutionScreen: React.FC<RecommendedSolutionScreenProps> = ({ o
         </div>
 
 
-        <div className='flex flex-col justify-center items-center mb-10'>
+        {/* <div className='flex flex-col justify-center items-center mb-10'>
           <button
             onClick={onContinueToChatClick}
             className='flex flex-col justify-center items-center'
@@ -68,6 +68,21 @@ const RecommendedSolutionScreen: React.FC<RecommendedSolutionScreenProps> = ({ o
             <img src="/scan.png" alt="" className='h-16 w-16' />
             <p className='font-bold text-2xl'>Click to scan Again</p>
           </Link>
+        </div> */}
+
+        <div className='flex gap-1 mb-4'>
+          <input
+            type="text"
+            className='w-full px-4 py-2 border border-green-600 placeholder-green-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500'
+            placeholder='Ask Genie Ai Again..'
+          />
+
+          <Link
+            to="/tutorial"
+          >
+            <img src="/scan.png" alt="" />
+          </Link>
+
         </div>
 
       </div>

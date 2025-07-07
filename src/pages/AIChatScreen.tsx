@@ -7,7 +7,7 @@ interface AIChatScreenProps {
   onGetRecommendationClick: () => void;
 }
 
-const AIChatScreen: React.FC<AIChatScreenProps> = ({ chatMessage, setChatMessage,onGetRecommendationClick }) => {
+const AIChatScreen: React.FC<AIChatScreenProps> = ({ chatMessage, setChatMessage, onGetRecommendationClick }) => {
   const examplePrompts = [
     "My plants are growing very slowly and some branches are wilting on one side. What could be the wrong?",
     "The leaves of my plants are curling and folding. What is causing this?",
@@ -45,15 +45,17 @@ const AIChatScreen: React.FC<AIChatScreenProps> = ({ chatMessage, setChatMessage
               <strong>Example:</strong> The leaves of my Areca Palm are getting yellow and it's not growing anymore. Is this overwatering or lack of nutrients? Give me the problem with recommended solutions.
             </p>
           </div> */}
-          <textarea
-            value={chatMessage}
-            onChange={e => setChatMessage(e.target.value)}
-            className='border-4 border-[#179C26] rounded-lg h-28 p-4 mb-6 text-center text-[#578F5C] w-full'
-          />
+          <div className='w-full animate-border rounded-lg bg-white/80 bg-gradient-to-r from-green-600 via-green-400 to-green-700 bg-[length:400%_400%] pt-1 pr-1 pl-1 mb-4'>
+            <textarea
+              value={chatMessage}
+              onChange={e => setChatMessage(e.target.value)}
+              className='rounded-lg h-28 p-2 w-full text-center text-[#578F5C] border-none outline-none focus:outline-none focus:ring-0 focus:border-none'
+            />
+          </div>
 
           <button
             onClick={onGetRecommendationClick}
-            className="w-full bg-green-500 text-white py-4 rounded-full text-lg font-semibold hover:bg-green-600 transition-colors "
+            className="w-full bg-[#108244] text-white py-4 rounded-full text-lg font-semibold hover:bg-green-600 transition-colors "
           >
             Get Recommendation
           </button>
