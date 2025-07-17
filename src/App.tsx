@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from
 import NavigationDots from './Component/NavigationDots'; // Assuming this component exists
 import { AppRoutes } from './routes/index'; // Import your route constants
 import Footer from './Shared/footer';
-import { AiOutlineProduct } from "react-icons/ai";
 
-// Import all screen components
+
+// Import-icons/ai";t all screen components
 import SplashScreen from './pages/SplashScreen';
 import PlantCategoriesScreen from './pages/PlantCategoriesScreen';
 import VerificationScreen from './pages/VerificationScreen';
