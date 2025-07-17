@@ -7,7 +7,7 @@ interface AIChatScreenProps {
   onGetRecommendationClick: () => void;
 }
 
-const AIChatScreen: React.FC<AIChatScreenProps> = ({ chatMessage, setChatMessage, onGetRecommendationClick }) => {
+const AIChatScreen: React.FC<AIChatScreenProps> = ({  setChatMessage, onGetRecommendationClick }) => {
   const examplePrompts = [
     "Custom Data",
     "Custom Data",
