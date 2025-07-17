@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import NavigationDots from './Component/NavigationDots'; // Assuming this component exists
 import { AppRoutes } from './routes/index'; // Import your route constants
-import  Footer  from '../Shared/footer';
+import Footer from './Shared/footer';
 import { AiOutlineProduct } from "react-icons/ai";
 
 // Import all screen components
