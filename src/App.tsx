@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import NavigationDots from './Component/NavigationDots'; // Assuming this component exists
 import { AppRoutes } from './routes/index'; // Import your route constants
-import Footer from './Shared/footer';
+
 
 
 // Import-icons/ai";t all screen components
@@ -142,7 +142,7 @@ const AppContent: React.FC = () => {
         <NavigationDots screensCount={orderedRoutes.length} currentScreen={currentScreenIndex} onDotClick={handleDotClick} />
       )} 
 
-{/*       <div className="fixed bottom-0 left-0 right-0 bg-white border-t flex  justify-around items-center py-2 max-w-sm mt-10 mx-auto">
+       <div className="fixed bottom-0 left-0 right-0 bg-white border-t flex  justify-around items-center py-2 max-w-sm mt-10 mx-auto">
         <button className="flex flex-col items-center">
           <AiOutlineProduct className="w-6 h-6 " />
           <span className="text-xs text-gray-400">Products</span>
@@ -157,7 +157,7 @@ const AppContent: React.FC = () => {
           <img src="/scan.png" alt="" className='h-7 w-7' />
           <span className="text-xs text-gray-400">Scan</span>
         </button>
-      </div> */}
+      </div> 
     </div>
   );
 };
@@ -166,7 +166,7 @@ const AppContent: React.FC = () => {
 const App: React.FC = () => (
   <Router>
     <AppContent />
-<Footer/>
+
   </Router>
 );
 
