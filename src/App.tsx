@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
- import NavigationDots from './Component/NavigationDots'; // Assuming this component exists
+import NavigationDots from './Component/NavigationDots'; // Assuming this component exists
 import { AppRoutes } from './routes/index'; // Import your route constants
 import { AiOutlineProduct } from "react-icons/ai";
 
@@ -137,9 +137,9 @@ const AppContent: React.FC = () => {
       </Routes>
 
       {/* Navigation Dots - only show on screens where it's relevant */}
-      {/* {location.pathname !== AppRoutes.Splash && ( // Don't show dots on splash screen
+       {location.pathname !== AppRoutes.Splash && ( // Don't show dots on splash screen
         <NavigationDots screensCount={orderedRoutes.length} currentScreen={currentScreenIndex} onDotClick={handleDotClick} />
-      )} */}
+      )} 
 
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t flex  justify-around items-center py-2 max-w-sm mt-10 mx-auto">
         <button className="flex flex-col items-center">
