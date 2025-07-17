@@ -142,9 +142,7 @@ const PlantCategoriesScreen: React.FC<PlantCategoriesScreenProps> = ({ onLoginCl
               <span className="inline-block w-0.5 h-4 bg-gray-600 ml-1 animate-pulse"></span>
             )}
           </p>
-        </div>
-
-        <div className="flex justify-center mb-20">
+            <div className="flex justify-center mb-20">
           <button
             onClick={onLoginClick}
             className={`fixed left-1/2 bottom-6 transform -translate-x-1/2 flex justify-center items-center  w-64 bg-[#108244] text-white py-3 rounded-full text-base font-semibold hover:bg-green-600 transition-all duration-500 ${showLoginButton
@@ -155,6 +153,9 @@ const PlantCategoriesScreen: React.FC<PlantCategoriesScreenProps> = ({ onLoginCl
             Login
           </button>
         </div>
+        </div>
+
+      
 
       </div>
     </div>
