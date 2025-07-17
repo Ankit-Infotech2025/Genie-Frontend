@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
-// import NavigationDots from './Component/NavigationDots'; // Assuming this component exists
+ import NavigationDots from './Component/NavigationDots'; // Assuming this component exists
 import { AppRoutes } from './routes/index'; // Import your route constants
 import { AiOutlineProduct } from "react-icons/ai";
 
@@ -52,11 +52,11 @@ const AppContent: React.FC = () => {
   const handleGetRecommendationClick = () => navigate(AppRoutes.DetailedDiagnosis); // From AI Chat to Detailed Diagnosis
 
   // Handle dot clicks for direct navigation
-  // const handleDotClick = (index: number) => {
-  //   if (index >= 0 && index < orderedRoutes.length) {
-  //     navigate(orderedRoutes[index]);
-  //   }
-  // };
+  const handleDotClick = (index: number) => {
+    if (index >= 0 && index < orderedRoutes.length) {
+      navigate(orderedRoutes[index]);
+    }
+  };
 
   // This useEffect ensures the Splash Screen is shown first on initial load
   useEffect(() => {
