@@ -19,7 +19,7 @@ const PhoneLoginScreen: React.FC<PhoneLoginScreenProps> = ({ phoneNumber, setPho
     };
 
     return (
-        <div className="min-h-screen bg-white flex flex-col justify-center px-6">
+        <div className="min-h-screen bg-white flex flex-col justify-center px-3">
             <div className="w-full max-w-sm mx-auto">
                 <div className="text-center mb-12">
                     {/* Genie AI Logo/Icon */}
@@ -34,7 +34,7 @@ const PhoneLoginScreen: React.FC<PhoneLoginScreenProps> = ({ phoneNumber, setPho
                     <div className='flex justify-center'>
                         <img src="/robot.png" alt="" />
                     </div>
-                    <h1 className="text-2xl font-light text-gray-900 mb-2">Login to be Amazed</h1>
+                    <h1 className="text-2xl font-light text-gray-900 mb-2">Lets get started</h1>
                     <p className="text-gray-500 text-sm">Enter your phone number to continue</p>
                 </div>
 

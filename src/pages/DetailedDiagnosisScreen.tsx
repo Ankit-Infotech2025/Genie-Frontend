@@ -21,7 +21,7 @@ const DetailedDiagnosisScreen: React.FC = () => {
     setTypedSolutionsText("");
     setVisibleSolutions(0);
 
-    const diagnosisText = "✨ Genie AI has detected Black Spot disease with 86% confidence.";
+    const diagnosisText = "✨ Genie AI has detected Areca Palm Black Spot disease with 86% confidence.";
     const magnesiumText = "Magnesium Deficiency";
     const blackSpotText = "Black Spot";
     const solutionsText = "Solutions:";
@@ -148,26 +148,26 @@ const DetailedDiagnosisScreen: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="px-6 py-8">
+      <div className="px-3 py-8">
         <div className="text-center mb-8">
           <div className='relative mb-4'>
             <img src="/disease.png"
               alt="disease"
               className='rounded-lg'
             />
-            {/* <div className='absolute bottom-4 right-4'> */}
-              <p className='absolute top-10 left-5 w-32 animate-border inline-block rounded-md bg-white/80 bg-gradient-to-r from-green-600 via-green-400 to-green-700 bg-[length:400%_400%] p-1'>
+            <div className='flex flex-col gap-1 absolute bottom-10 right-4 items-end'>
+              <p className='animate-border inline-block rounded-md bg-white/80 bg-gradient-to-r from-green-600 via-green-400 to-green-700 bg-[length:400%_400%] p-1'>
                 <span className="block rounded-md bg-white/80 p-2 font-bold text-black">Magnesium Deficiency</span>
               </p>
-              <p className='absolute bottom-44 right-4 w-32 animate-border inline-block rounded-md bg-white/80 bg-gradient-to-r from-green-600 via-green-400 to-green-700 bg-[length:400%_400%] p-1'>
+              <p className=' animate-border inline-block rounded-md bg-white/80 bg-gradient-to-r from-green-600 via-green-400 to-green-700 bg-[length:400%_400%] p-1'>
                 <span className="block rounded-md bg-white/80 p-2 font-bold text-black">Black Spot</span>
               </p>
-            {/* </div> */}
+            </div>
           </div>
 
           <p className="text-black mb-4">
             {typedDiagnosisTitle}
-            {typedDiagnosisTitle.length < '✨ Genie AI has detected Black Spot disease with 86% confidence.'.length && (
+            {typedDiagnosisTitle.length < '✨ Genie AI has detected Areca Palm Black Spot disease with 86% confidence.'.length && (
               <span className="inline-block w-0.5 h-4 bg-green-600 ml-1 animate-pulse"></span>
             )}
           </p>
@@ -199,22 +199,9 @@ const DetailedDiagnosisScreen: React.FC = () => {
             </div>
           </div>
 
-          <div className="text-left space-y-6">
-            {/* Magnesium Deficiency Solution */}
-            <div className="">
-              <h3 className="text-xl font-bold mb-1">Solution:</h3>
-              <p className="text-sm mb-2">
-                <strong>For Magnesium Deficiency :</strong> Epsom salt is a simple way to fix magnesium deficiency in plants. It contains magnesium and sulfur that helps plants make chlorophyll and protein respectively.
-              </p>
-              <p className="text-sm mb-2">
-                <strong>For Black Spots :</strong>  Cut off leaves that have black spots and use Neem Oil Spray. It will kill all pests and fungi and provide overall growth.
-              </p>
-            </div>
-          </div>
-
           <Link
           to={"/solution"}
-          className='bg-[#108244] text-white w-full px-4 py-2 rounded-full font-semibold hover:bg-green-600 transition-colors inline-flex justify-center items-center gap-1 mt-4'
+          className='bg-[#108244] text-white w-full px-4 py-3 rounded-full font-semibold hover:bg-green-600 transition-colors inline-flex justify-center items-center gap-1 mt-4'
           >
             <ArrowRight />
           </Link>

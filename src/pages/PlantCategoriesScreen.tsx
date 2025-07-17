@@ -22,15 +22,21 @@ const plantCategories: PlantCategory[] = [
 const PlantCategoriesScreen: React.FC<PlantCategoriesScreenProps> = ({ onLoginClick }) => {
   const [typedText, setTypedText] = useState("");
   const [typedSubtext, setTypedSubtext] = useState("");
+  const [typesLastText, setTypedLastText] = useState("");
   const [visiblePlants, setVisiblePlants] = useState(0);
+  const [showLoginButton, setShowLoginButton] = useState(false);
 
   useEffect(() => {
     setTypedText("");
     setTypedSubtext("");
+    setTypedLastText("");
     setVisiblePlants(0);
+    setShowLoginButton(false);
 
-    const mainText = "α Version - 10 Plants Model";
-    const subText = "Trained on Indian Household Plants";
+    const mainText = "Explore Genie AI for 10 Plants";
+    const subText = "Version 1.0";
+    const lastText = "Trained on Indian Household plants";
+
     let currentIndex = 0;
 
     const typeMainText = () => {
@@ -53,6 +59,17 @@ const PlantCategoriesScreen: React.FC<PlantCategoriesScreenProps> = ({ onLoginCl
                     const next = prev + 1;
                     if (next < plantCategories.length) {
                       setTimeout(showPlantsSequentially, 100);
+                    } else {
+                      // After all plants shown, start typing lastText
+                      let lastIndex = 0;
+                      const typeLastText = () => {
+                        if (lastIndex < lastText.length) {
+                          setTypedLastText(lastText.substring(0, lastIndex + 1));
+                          lastIndex++;
+                          setTimeout(typeLastText, 20);
+                        }
+                      };
+                      setTimeout(typeLastText, 300);
                     }
                     return next;
                   });
@@ -65,23 +82,30 @@ const PlantCategoriesScreen: React.FC<PlantCategoriesScreenProps> = ({ onLoginCl
         }, 200);
       }
     };
+
+    const loginTimeout = setTimeout(() => {
+      setShowLoginButton(true);
+    }, 3000);
+
     setTimeout(typeMainText, 200);
+    return () => clearTimeout(loginTimeout);
   }, []);
+
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="px-6 py-4">
+      <div className="px-3 py-4">
         <div className="text-center mb-4">
           <h1 className="text-xl font-bold text-gray-800">
             {typedText}
-            {typedText.length < "α Version - 10 Plants Model".length && (
+            {typedText.length < "Explore Genie AI for 10 Plants".length && (
               <span className="inline-block w-0.5 h-6 bg-gray-800 ml-1 animate-pulse"></span>
             )}
           </h1>
           <p className="text-gray-600">
             {typedSubtext}
-            {typedSubtext && typedSubtext.length < "Trained on Indian Household Plants".length && (
-              <span className="inline-block w-0.5 h-4 bg-gray-600 ml-1 animate-pulse"></span>
+            {typedSubtext && typedSubtext.length < "Version 1.0".length && (
+              <span className="inline-block w-0.5 h-4 bg-gray-400 ml-1 animate-pulse"></span>
             )}
           </p>
         </div>
@@ -111,12 +135,21 @@ const PlantCategoriesScreen: React.FC<PlantCategoriesScreenProps> = ({ onLoginCl
           ))}
         </div>
 
+        <div className='text-center mb-4'>
+          <p className="text-gray-600">
+            {typesLastText}
+            {typesLastText && typesLastText.length < "Trained on Indian Household Plants".length && (
+              <span className="inline-block w-0.5 h-4 bg-gray-600 ml-1 animate-pulse"></span>
+            )}
+          </p>
+        </div>
+
         <div className="flex justify-center">
           <button
             onClick={onLoginClick}
-            className={`fixed left-1/2 bottom-6 transform -translate-x-1/2 flex justify-center items-center w-64 bg-[#108244] text-white py-3 rounded-full text-base font-semibold hover:bg-green-600 transition-all duration-500 ${visiblePlants >= plantCategories.length
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-4"
+            className={`fixed left-1/2 bottom-6 transform -translate-x-1/2 flex justify-center items-center  w-64 bg-[#108244] text-white py-3 rounded-full text-base font-semibold hover:bg-green-600 transition-all duration-500 ${showLoginButton
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4"
               }`}
           >
             Login

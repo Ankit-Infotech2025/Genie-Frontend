@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import NavigationDots from './Component/NavigationDots'; // Assuming this component exists
 import { AppRoutes } from './routes/index'; // Import your route constants
+import { AiOutlineProduct } from "react-icons/ai";
 
 // Import all screen components
 import SplashScreen from './pages/SplashScreen';
@@ -136,9 +137,26 @@ const AppContent: React.FC = () => {
       </Routes>
 
       {/* Navigation Dots - only show on screens where it's relevant */}
-      {location.pathname !== AppRoutes.Splash && ( // Don't show dots on splash screen
+      {/* {location.pathname !== AppRoutes.Splash && ( // Don't show dots on splash screen
         <NavigationDots screensCount={orderedRoutes.length} currentScreen={currentScreenIndex} onDotClick={handleDotClick} />
-      )}
+      )} */}
+
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t flex  justify-around items-center py-2 max-w-sm mt-10 mx-auto">
+        <button className="flex flex-col items-center">
+          <AiOutlineProduct className="w-6 h-6 " />
+          <span className="text-xs text-gray-400">Products</span>
+        </button>
+        <button className="flex flex-col items-center">
+          <div className='bg-green-600 p-2 rounded-full'>
+            <img src="/robot.png" alt="" className='h-7 w-7' />
+          </div>
+          <span className="text-xs text-gray-400">GenieAi</span>
+        </button>
+        <button className="flex flex-col items-center">
+          <img src="/scan.png" alt="" className='h-7 w-7' />
+          <span className="text-xs text-gray-400">Scan</span>
+        </button>
+      </div>
     </div>
   );
 };

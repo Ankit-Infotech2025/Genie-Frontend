@@ -72,7 +72,7 @@ const PlantIdScreen: React.FC<PlantIdScreenProps> = ({ onDiagnosisDetailsClick }
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="p-6">
+      <div className="p-3">
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-2">Areca Palm</h2>
           <p className="text-green-600 mb-4">

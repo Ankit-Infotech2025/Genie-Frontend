@@ -15,8 +15,8 @@ interface TutorialScreenProps {
 const TutorialScreen: React.FC<TutorialScreenProps> = ({ onCameraClick }) => {
     return (
         <div className="min-h-screen bg-white">
-            <div className="px-6 py-6">
-                <h1 className="text-3xl font-bold text-gray-800 text-center mb-6">How to use Genie Ai</h1>
+            <div className="px-3 py-6">
+                <h1 className="text-xl font-bold text-gray-800 text-center mb-6">Plant Tantrums solved in 2 Simple Steps</h1>
 
                 <div className="space-y-8">
                     <div className="text-center">

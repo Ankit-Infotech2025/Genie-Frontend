@@ -1,51 +1,110 @@
 // src/screens/RecommendedSolutionScreen.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Modal from '../Component/ui/model'
 
 interface RecommendedSolutionScreenProps {
   onContinueToChatClick: () => void;
 }
 
 const RecommendedSolutionScreen: React.FC<RecommendedSolutionScreenProps> = ({ }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-white">
-      <div className="px-6 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-gray-800">Recommended Solution for Black Spot</h1>
-          <div className="">
-            <img
-              src="/spray.png"
-              alt="Mealy Bug Spray"
-              className="w-48 h-64 object-contain mx-auto"
-            />
+      <div className="px-3 py-8">
+        <div className="text-center ">
+          <h1 className="text-2xl font-bold text-gray-800">Suggested Remedy</h1>
+
+          <div className="flex justify-center items-center gap-2 p-2 rounded-lg my-4">
+            <div className="text-left space-y-1 text-xs rounded-lg w-[75%] ">
+              <h3 className="text-base font-bold">Solution:</h3>
+              <p className="mb-2">
+                <strong>For Magnesium Deficiency :</strong> Epsom salt is a simple way to fix magnesium deficiency in plants. It contains magnesium and sulfur that helps plants make chlorophyll and protein respectively.
+              </p>
+              {/* <p className="">
+                <strong>For Black Spots :</strong>  Cut off leaves that have black spots and use Neem Oil Spray. It will kill all pests and fungi and provide overall growth.
+              </p> */}
+            </div>
+            <div className=''>
+              <img
+                src="/spray.png"
+                alt="Mealy Bug Spray"
+                className="w-auto h-auto object-contain"
+              />
+            </div>
           </div>
 
           <div className="mb-8">
             <h2 className="text-xl font-bold text-gray-800 mb-2">Mealy Oil Spray</h2>
             <p className="text-green-600 mb-4">Natural insecticide for effective pest control</p>
-            <button className="bg-green-100 text-black px-2 py-1 rounded-full font-semibold hover:bg-green-200 transition-colors inline-flex items-center gap-1">
-              Buy Now <ArrowRight size={16} />
-            </button>
+            <div className="flex justify-center gap-4 mb-4">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="bg-yellow-400 text-black px-2.5 py-1.5 rounded-full font-semibold hover:bg-yellow-500 transition-colors inline-flex items-center gap-1"
+              >
+                How to Use
+              </button>
+              <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="How to Use">
+                <p className="text-gray-700">
+                  1. Shake the bottle well before use.<br />
+                  2. Spray directly on affected leaves.<br />
+                  3. Use in the early morning or evening.<br />
+                  4. Avoid spraying during the hottest part of the day.<br />
+                  5. Repeat every 7 days or as needed.
+                </p>
+              </Modal>
+              <button className="bg-[#108244] text-white px-2.5 py-1.5 rounded-full font-semibold hover:bg-green-600 transition-colors inline-flex items-center gap-1">
+                Buy Now <ArrowRight size={16} />
+              </button>
+            </div>
           </div>
         </div>
 
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-gray-800">Recommended Solution for Magnesium</h1>
-          <div className="">
-            <img
-              src="/salt.png"
-              alt="salt"
-              className="w-48 h-64 object-contain mx-auto"
-            />
+          <div className="flex justify-center items-center gap-2 p-2 rounded-lg my-4">
+            <div className="text-left space-y-1 text-xs rounded-lg w-[75%] ">
+              <h3 className="text-base font-bold">Solution:</h3>
+              {/* <p className="mb-2">
+                <strong>For Magnesium Deficiency :</strong> Epsom salt is a simple way to fix magnesium deficiency in plants. It contains magnesium and sulfur that helps plants make chlorophyll and protein respectively.
+              </p> */}
+              <p className="">
+                <strong>For Black Spots :</strong>  Cut off leaves that have black spots and use Neem Oil Spray. It will kill all pests and fungi and provide overall growth.
+              </p>
+            </div>
+            <div className=''>
+              <img
+                src="/salt.png"
+                alt="Mealy Bug Spray"
+                className="w-auto h-auto object-contain"
+              />
+            </div>
           </div>
 
           <div className="mb-8">
             <h2 className="text-xl font-bold text-gray-800 mb-2">Epsom Salt</h2>
             <p className="text-green-600 mb-4">Natural insecticide for effective pest control</p>
-            <button className="bg-green-100 text-black px-2 py-1 rounded-full font-semibold hover:bg-green-200 transition-colors inline-flex items-center gap-1">
-              Buy Now <ArrowRight size={16} />
-            </button>
+            <div className="flex justify-center gap-4 mb-4">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="bg-yellow-400 text-black px-2.5 py-1.5 rounded-full font-semibold hover:bg-yellow-500 transition-colors inline-flex items-center gap-1"
+              >
+                How to Use
+              </button>
+              <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="How to Use">
+                <p className="text-gray-700">
+                  1. Shake the bottle well before use.<br />
+                  2. Spray directly on affected leaves.<br />
+                  3. Use in the early morning or evening.<br />
+                  4. Avoid spraying during the hottest part of the day.<br />
+                  5. Repeat every 7 days or as needed.
+                </p>
+              </Modal>
+              <button className="bg-[#108244]  text-white px-2.5 py-1.5 rounded-full font-semibold hover:bg-green-600 transition-colors inline-flex items-center gap-1">
+                Buy Now <ArrowRight size={16} />
+              </button>
+            </div>
           </div>
         </div>
 
@@ -70,21 +129,22 @@ const RecommendedSolutionScreen: React.FC<RecommendedSolutionScreenProps> = ({ }
           </Link>
         </div> */}
 
-        <div className='flex gap-1 mb-4'>
-          <input
-            type="text"
-            className='w-full px-4 py-2 border border-green-600 placeholder-green-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500'
-            placeholder='Ask Genie Ai Again..'
-          />
+        {/* <div className="text-left space-y-4 bg-gray-100 rounded-lg p-3">
+          <h3 className="text-xl font-bold mb-1">Solution:</h3>
+          <p className="text-sm mb-2">
+            <strong>For Magnesium Deficiency :</strong> Epsom salt is a simple way to fix magnesium deficiency in plants. It contains magnesium and sulfur that helps plants make chlorophyll and protein respectively.
+          </p>
+          <p className="text-sm mb-2">
+            <strong>For Black Spots :</strong>  Cut off leaves that have black spots and use Neem Oil Spray. It will kill all pests and fungi and provide overall growth.
+          </p>
+        </div> */}
 
-          <Link
-            to="/tutorial"
-          >
-            <img src="/scan.png" alt="" />
-          </Link>
-
-        </div>
-
+        <Link
+          to="/tutorial"
+          className='bg-[#108244] text-white w-full px-4 py-3 rounded-full font-semibold hover:bg-green-600 transition-colors inline-flex justify-center items-center gap-1 mt-4'
+        >
+         Ask Genie Ai Again
+        </Link>
       </div>
     </div>
   );

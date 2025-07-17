@@ -35,7 +35,7 @@ const VerificationScreen: React.FC<VerificationScreenProps> = ({ otpCode, setOtp
     };
 
     return (
-        <div className="min-h-screen bg-white flex flex-col justify-center px-6">
+        <div className="min-h-screen bg-white flex flex-col justify-center px-3">
             <div className="text-center mb-12">
                 <h1 className="text-2xl font-bold text-gray-800 mb-4">Verification Code</h1>
                 <p className="text-gray-600">We have sent the verification code to your mobile number</p>
