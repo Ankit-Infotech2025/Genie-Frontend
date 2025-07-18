@@ -102,7 +102,7 @@ const PlantCategoriesScreen: React.FC<PlantCategoriesScreenProps> = ({ onLoginCl
               <span className="inline-block w-0.5 h-6 bg-gray-800 ml-1 animate-pulse"></span>
             )}
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-400">
             {typedSubtext}
             {typedSubtext && typedSubtext.length < "Version 1.0".length && (
               <span className="inline-block w-0.5 h-4 bg-gray-400 ml-1 animate-pulse"></span>
@@ -142,21 +142,18 @@ const PlantCategoriesScreen: React.FC<PlantCategoriesScreenProps> = ({ onLoginCl
               <span className="inline-block w-0.5 h-4 bg-gray-600 ml-1 animate-pulse"></span>
             )}
           </p>
-            <div className="flex justify-center mb-20">
-          <button
-            onClick={onLoginClick}
-            className={`fixed left-1/2 bottom-6 transform -translate-x-1/2 flex justify-center items-center  w-64 bg-[#108244] text-white py-3 rounded-full text-base font-semibold hover:bg-green-600 transition-all duration-500 ${showLoginButton
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-4"
-              }`}
-          >
-            Login
-          </button>
+          <div className="flex justify-center">
+            <button
+              onClick={onLoginClick}
+              className={` flex justify-center items-center w-64 bg-[#108244] text-white py-3 rounded-full text-base font-semibold hover:bg-green-600 transition-all duration-500 ${showLoginButton
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+                }`}
+            >
+              Login
+            </button>
+          </div>
         </div>
-        </div>
-
-      
-
       </div>
     </div>
   );

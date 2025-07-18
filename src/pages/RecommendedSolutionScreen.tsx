@@ -14,6 +14,10 @@ const RecommendedSolutionScreen: React.FC<RecommendedSolutionScreenProps> = ({ }
   return (
     <div className="min-h-screen bg-white">
       <div className="px-3 py-8">
+        {/* <Link
+        to={}
+        >
+        </Link> */}
         <div className="text-center ">
           <h1 className="text-2xl font-bold text-gray-800">Suggested Remedy</h1>
 

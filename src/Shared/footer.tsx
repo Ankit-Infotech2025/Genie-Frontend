@@ -1,24 +1,28 @@
 import React from 'react';
 import { AiOutlineProduct } from 'react-icons/ai';
+import { ScanLine } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-md z-50">
-      <div className="flex justify-around items-center py-2 max-w-sm mx-auto">
-        <button className="flex flex-col items-center text-gray-600 hover:text-black">
-          <AiOutlineProduct className="w-6 h-6 mb-1" />
-          <span className="text-xs">Products</span>
-        </button>
-        <button className="flex flex-col items-center text-gray-600 hover:text-black">
-          <div className="bg-green-600 p-2 rounded-full mb-1">
-            <img src="/robot.png" alt="Genie AI" className="h-6 w-6" />
-          </div>
-          <span className="text-xs">GenieAi</span>
-        </button>
-        <button className="flex flex-col items-center text-gray-600 hover:text-black">
-          <img src="/scan.png" alt="Scan" className="h-6 w-6 mb-1" />
-          <span className="text-xs">Scan</span>
-        </button>
+    <div className="w-full border-t fixed bottom-0 left-0 right-0 flex justify-center items-end pointer-events-none mx-auto max-w-sm">
+      <div className="relative bg-white w-full p-1 flex items-center justify-around shadow-lg pointer-events-auto">
+        {/* Floating Center Button */}
+        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 rounded-full">
+          <button className="bg-[#108244] w-[70px] h-[70px] rounded-full flex items-center justify-center shadow-xl ">
+            <img src="/robot.png" alt="" />
+          </button>
+        </div>
+
+        {/* Left icons */}
+        <div className='flex flex-col items-center text-black text-xs gap-0.5'>
+          <AiOutlineProduct className="w-6 h-6" />
+          <span>Product</span>
+        </div>
+        <div className="w-14" /> {/* Spacer for center button */}
+        <div className='flex flex-col items-center text-black text-xs gap-0.5'>
+          <ScanLine className="w-6 h-6" />
+          <span>Scan</span>
+        </div>
       </div>
     </div>
   );

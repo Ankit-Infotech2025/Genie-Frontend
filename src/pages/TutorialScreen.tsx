@@ -64,7 +64,7 @@ const TutorialScreen: React.FC<TutorialScreenProps> = ({ onCameraClick }) => {
                 </div>
             </div>
 
-            <div className="">
+            <div className="mb-4">
                 <button
                     onClick={onCameraClick}
                     className="w-full bg-[#108244] text-white py-3 rounded-full text-base font-semibold hover:bg-green-600 transition-all duration-500"

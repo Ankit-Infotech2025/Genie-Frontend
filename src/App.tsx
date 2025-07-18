@@ -15,6 +15,7 @@ import PlantIdScreen from './pages/PlantIdScreen';
 import RecommendedSolutionScreen from './pages/RecommendedSolutionScreen';
 import AIChatScreen from './pages/AIChatScreen';
 import DetailedDiagnosisScreen from './pages/DetailedDiagnosisScreen';
+import Footer from './Shared/footer';
 
 // Main App component responsible for routing and global state
 const AppContent: React.FC = () => {
@@ -67,82 +68,83 @@ const AppContent: React.FC = () => {
   }, [location.pathname, currentScreenIndex, navigate]);
 
   return (
-    <div className="max-w-sm mx-auto bg-white shadow-xl min-h-screen relative overflow-hidden">
-      <Routes>
-        {/* Route for Splash Screen - This is the default route for '/' */}
-        <Route
-          path={AppRoutes.Splash}
-          element={
-            <SplashScreen
-              setShowRobotAnimation={setShowRobotAnimation}
-              showRobotAnimation={showRobotAnimation}
-              onAnimationComplete={handleSplashScreenComplete}
-            />
-          }
-        />
-        {/* Route for Plant Categories Screen */}
-        <Route
-          path={AppRoutes.Categories}
-          element={<PlantCategoriesScreen onLoginClick={handleLoginClick} />}
-        />
-        {/* Route for Phone Login Screen */}
-        <Route
-          path={AppRoutes.PhoneLogin}
-          element={
-            <PhoneLoginScreen
-              phoneNumber={phoneNumber}
-              setPhoneNumber={setPhoneNumber}
-              onGetOtpClick={handleGetOtpClick}
-            />
-          }
-        />
-        {/* Route for Verification Screen */}
-        <Route
-          path={AppRoutes.Verification}
-          element={
-            <VerificationScreen
-              otpCode={otpCode}
-              setOtpCode={setOtpCode}
-              onConfirmClick={handleConfirmOtpClick}
-            />
-          }
-        />
-        {/* Route for Tutorial Screen */}
-        <Route
-          path={AppRoutes.Tutorial}
-          element={<TutorialScreen onCameraClick={handleCameraClick} />}
-        />
-        {/* Route for Plant ID Screen */}
-        <Route
-          path={AppRoutes.PlantId}
-          element={<PlantIdScreen onDiagnosisDetailsClick={handleDiagnosisDetailsClick} />}
-        />
-        {/* Route for Recommended Solution Screen */}
-        <Route
-          path={AppRoutes.RecommendedSolution}
-          element={<RecommendedSolutionScreen onContinueToChatClick={handleContinueToChatClick} />}
-        />
-        {/* Route for AI Chat Screen */}
-        <Route
-          path={AppRoutes.AIChat}
-          element={
-            <AIChatScreen
-              chatMessage={chatMessage}
-              setChatMessage={setChatMessage}
-              onGetRecommendationClick={handleGetRecommendationClick}
-            />
-          }
-        />
-        {/* Route for Detailed Diagnosis Screen */}
-        <Route path={AppRoutes.DetailedDiagnosis} element={<DetailedDiagnosisScreen />} />
-      </Routes>
+    <>
+      <div className="max-w-sm mx-auto bg-white shadow-xl min-h-screen relative overflow-hidden">
+        <Routes>
+          {/* Route for Splash Screen - This is the default route for '/' */}
+          <Route
+            path={AppRoutes.Splash}
+            element={
+              <SplashScreen
+                setShowRobotAnimation={setShowRobotAnimation}
+                showRobotAnimation={showRobotAnimation}
+                onAnimationComplete={handleSplashScreenComplete}
+              />
+            }
+          />
+          {/* Route for Plant Categories Screen */}
+          <Route
+            path={AppRoutes.Categories}
+            element={<PlantCategoriesScreen onLoginClick={handleLoginClick} />}
+          />
+          {/* Route for Phone Login Screen */}
+          <Route
+            path={AppRoutes.PhoneLogin}
+            element={
+              <PhoneLoginScreen
+                phoneNumber={phoneNumber}
+                setPhoneNumber={setPhoneNumber}
+                onGetOtpClick={handleGetOtpClick}
+              />
+            }
+          />
+          {/* Route for Verification Screen */}
+          <Route
+            path={AppRoutes.Verification}
+            element={
+              <VerificationScreen
+                otpCode={otpCode}
+                setOtpCode={setOtpCode}
+                onConfirmClick={handleConfirmOtpClick}
+              />
+            }
+          />
+          {/* Route for Tutorial Screen */}
+          <Route
+            path={AppRoutes.Tutorial}
+            element={<TutorialScreen onCameraClick={handleCameraClick} />}
+          />
+          {/* Route for Plant ID Screen */}
+          <Route
+            path={AppRoutes.PlantId}
+            element={<PlantIdScreen onDiagnosisDetailsClick={handleDiagnosisDetailsClick} />}
+          />
+          {/* Route for Recommended Solution Screen */}
+          <Route
+            path={AppRoutes.RecommendedSolution}
+            element={<RecommendedSolutionScreen onContinueToChatClick={handleContinueToChatClick} />}
+          />
+          {/* Route for AI Chat Screen */}
+          <Route
+            path={AppRoutes.AIChat}
+            element={
+              <AIChatScreen
+                chatMessage={chatMessage}
+                setChatMessage={setChatMessage}
+                onGetRecommendationClick={handleGetRecommendationClick}
+              />
+            }
+          />
+          {/* Route for Detailed Diagnosis Screen */}
+          <Route path={AppRoutes.DetailedDiagnosis} element={<DetailedDiagnosisScreen />} />
+        </Routes>
 
-      {/* Navigation Dots - only show on screens where it's relevant */}
-       {location.pathname !== AppRoutes.Splash && ( // Don't show dots on splash screen
-        <NavigationDots screensCount={orderedRoutes.length} currentScreen={currentScreenIndex} onDotClick={handleDotClick} />
-      )} 
+        {/* Navigation Dots - only show on screens where it's relevant */}
+        {location.pathname !== AppRoutes.Splash && ( // Don't show dots on splash screen
+          <NavigationDots screensCount={orderedRoutes.length} currentScreen={currentScreenIndex} onDotClick={handleDotClick} />
+        )}
 
-       <div className="fixed bottom-0 left-0 right-0 bg-white border-t flex  justify-around items-center py-2 max-w-sm mt-10 mx-auto">
+        {/* <div className="fixed bottom-0 left-0 right-0 bg-white border-t flex  justify-around items-center py-2 max-w-sm mx-auto">
         <button className="flex flex-col items-center">
           <AiOutlineProduct className="w-6 h-6 " />
           <span className="text-xs text-gray-400">Products</span>
@@ -157,8 +159,13 @@ const AppContent: React.FC = () => {
           <img src="/scan.png" alt="" className='h-7 w-7' />
           <span className="text-xs text-gray-400">Scan</span>
         </button>
-      </div> 
-    </div>
+      </div>  */}
+
+      </div>
+      <div className='mt-6'>
+        <Footer />
+      </div>
+    </>
   );
 };
 
@@ -166,7 +173,7 @@ const AppContent: React.FC = () => {
 const App: React.FC = () => (
   <Router>
     <AppContent />
-
+    {/* <Footer /> */}
   </Router>
 );
 

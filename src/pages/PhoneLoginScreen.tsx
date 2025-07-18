@@ -22,15 +22,6 @@ const PhoneLoginScreen: React.FC<PhoneLoginScreenProps> = ({ phoneNumber, setPho
         <div className="min-h-screen bg-white flex flex-col justify-center px-3">
             <div className="w-full max-w-sm mx-auto">
                 <div className="text-center mb-12">
-                    {/* Genie AI Logo/Icon */}
-                    {/* <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-3xl mx-auto mb-6 flex items-center justify-center shadow-lg">
-                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                            <div className="w-5 h-5 bg-green-500 rounded-full relative">
-                                <div className="absolute top-0.5 left-1 w-2 h-2 bg-white rounded-full"></div>
-                                <div className="absolute bottom-0.5 right-0.5 w-1 h-1 bg-white rounded-full"></div>
-                            </div>
-                        </div>
-                    </div> */}
                     <div className='flex justify-center'>
                         <img src="/robot.png" alt="" />
                     </div>

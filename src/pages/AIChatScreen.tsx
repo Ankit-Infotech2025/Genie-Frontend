@@ -1,5 +1,6 @@
 // src/screens/AIChatScreen.tsx
 import React from 'react';
+import GenieAIThinking from '../Component/ui/GenieThinking';
 
 interface AIChatScreenProps {
   chatMessage: string;
@@ -7,7 +8,7 @@ interface AIChatScreenProps {
   onGetRecommendationClick: () => void;
 }
 
-const AIChatScreen: React.FC<AIChatScreenProps> = ({  setChatMessage, onGetRecommendationClick }) => {
+const AIChatScreen: React.FC<AIChatScreenProps> = ({ setChatMessage, onGetRecommendationClick }) => {
   const examplePrompts = [
     "Custom Data",
     "Custom Data",
@@ -17,14 +18,8 @@ const AIChatScreen: React.FC<AIChatScreenProps> = ({  setChatMessage, onGetRecom
     <div className="min-h-screen bg-white flex flex-col">
       <div className="px-3 py-8 flex-1">
         <div className="text-center mb-8">
-          <div className="relative flex justify-center items-center mb-4">
-            <img src="/robo.png"
-              alt="robot"
-              className='h-48 w-48 '
-            />
-            {/* <div className='absolute top-2 right-0'>
-                <p className='text-xs text-white w-20'>Genie AI is thinking..</p>
-              </div> */}
+          <div className="">
+            <GenieAIThinking />
           </div>
 
           <div className='flex justify-between'>
