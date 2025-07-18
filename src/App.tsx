@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import NavigationDots from './Component/NavigationDots'; // Assuming this component exists
 import { AppRoutes } from './routes/index'; // Import your route constants
-import { AiOutlineProduct } from 'react-icons/ai';
-
 
 // Import-icons/ai";t all screen components
 import SplashScreen from './pages/SplashScreen';
