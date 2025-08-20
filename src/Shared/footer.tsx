@@ -1,6 +1,6 @@
 import React from 'react';
-import { AiOutlineProduct } from 'react-icons/ai';
-import { ScanLine } from "lucide-react";
+// import { AiOutlineProduct } from 'react-icons/ai';
+import { Box, ScanLine } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
 
         {/* Left icons */}
         <div className='flex flex-col items-center text-black text-xs gap-0.5'>
-          <AiOutlineProduct className="w-6 h-6" />
+          <Box className="w-6 h-6" />
           <span>Product</span>
         </div>
         <div className="w-14" /> {/* Spacer for center button */}
